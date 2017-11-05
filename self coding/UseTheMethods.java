@@ -50,7 +50,7 @@ public class UseTheMethods {
 		//Pt10
 		System.out.println("Enter a number for method 10: ");
 		inputNum = console.nextInt();
-		System.out.println("Factorial start from " + inputNum + " is " + methodTen(inputNum));
+		System.out.println("Factorial of " + inputNum + " is " + methodTen(inputNum));
 		//Pt11
 		System.out.println("Enter three numbers for method 11. \n First: ");
 		inputNum = console.nextInt();
@@ -171,16 +171,14 @@ public class UseTheMethods {
 		return minNum;
 	}
 	//Part10
-	public static String methodTen(int num) {
-		String mark = " ";
-		int sum = 1;
-		while (num > 1) {
-			mark = mark + " " + num;
-			sum *= num;
-			num--;
+	public static int methodTen(int num) {
+		int fact = 1;
+		int i = 1;
+		while (i <= num) {
+			fact = fact * i;
+			i++;
 		}
-		mark = mark + " " + num + " = " + sum;
-		return mark;
+		return fact;
 	}
 	//Part11
 	public static int methodEleven(int num1, int num2, int num3) {
