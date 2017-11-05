@@ -115,14 +115,14 @@ public class UseTheMethods {
 	}
 	//Part4
 	public static int methodFour(int input) {
-		int product = 0, remainder = 0, wholeNum = 0;
+		int sum = 0, remainder = 0, wholeNum = 0;
 		while (input < 0) {
 			remainder = input % 10;
 			wholeNum = input / 10;
-			product = product + remainder;
+			sum = sum + remainder;
 			input = wholeNum;
 		}
-		return product;
+		return sum;
 	}
 	//Part5
 	public static int methodFive(int input) {
