@@ -21,7 +21,7 @@ public class PigGame {
 							+"Each player can keep throwing the dice by entering \"Roll\". To win the game, a player must reach 100 points.\n"
 							+"Players can try to get 100 in one round or end their turn to add their current round score to thier total.\n"
 							+"If the player rolls a 1, the current score for their round is lost and the next player goes.\n"
-							+"During each players round they choose to keep their current score per round to their total\n"
+							+"During each player's round they choose to keep their current score per round to their total\n"
 							+"if they enter \"Hold\", but that means their turn is over.\n"
 							+"Players can also check the current scores by entering \"Print\". \n"
 							+"If any player wishes to quit, they can enter \"quit\", but this also means the entire game is forefiet.\n"
@@ -148,7 +148,7 @@ public class PigGame {
 
 	// Rolling Dice
 	public static int diceRoll(int dice) {
-		dice = 50;
+		dice = 0;
 		Random generator = new Random();
 		do {
 			dice = generator.nextInt(6) + 1;
