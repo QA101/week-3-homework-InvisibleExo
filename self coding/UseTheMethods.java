@@ -19,13 +19,11 @@ public class UseTheMethods {
 		//Pt4
 		System.out.println("Now enter a number for the forth method: ");
 		inputNum = console.nextInt();
-		System.out.println("If we were to add " + inputNum + ", increment 4 times, and add all five numbers, we get: " + methodFour(inputNum));
+		System.out.println("The sum of " + inputNum + " is " + methodFour(inputNum));
 		//Pt5 and returning an int this time.
 		System.out.println("Now enter a number for the fifth method: ");
 		inputNum = console.nextInt();
-		System.out.println("If we were to add " + inputNum + 
-				", \nincrement by 1 four times, and multiplay all five numbers after each increment, \nwe get: " 
-				+ methodFive(inputNum)); //Only Python would be concerned with white space, but this should be avoided if possible.
+		System.out.println("Product of " + inputNum + " is " + methodFive(inputNum)); 
 		//Pt6
 		System.out.println("Now enter a number for the sixth method, ");
 		System.out.println("but first, what number would you like to see mirrored?" );
@@ -116,32 +114,26 @@ public class UseTheMethods {
 		return Final;
 	}
 	//Part4
-	public static String methodFour(int input) {
-		String Final = " ";
-		int counter = 1;
-		int sum = 0;
-		while (counter <=5) {
-			sum += input;
-			Final = Final + " " + input;
-			input++;
-			counter++;
+	public static int methodFour(int input) {
+		int product = 0, remainder = 0, wholeNum = 0;
+		while (input < 0) {
+			remainder = input % 10;
+			wholeNum = input / 10;
+			product = product + remainder;
+			input = wholeNum;
 		}
-		Final = Final + " = " + sum;
-		return Final;
+		return product;
 	}
 	//Part5
 	public static int methodFive(int input) {
-		int counter = 1;
-		int sum = 1;
-		while (counter <=5) {
-			sum *= input;
-			if (sum == 0) {
-				sum++;
-			}
-			input++;
-			counter++;
+		int product = 1, remainder = 0, wholeNum = 0;
+		while (input < 0) {
+			remainder = input % 10;
+			wholeNum = input / 10;
+			product = product * remainder;
+			input = wholeNum;
 		}
-		return sum;
+		return product;
 	}
 	//Part6
 	public static String methodSix(int input) {
@@ -168,30 +160,14 @@ public class UseTheMethods {
 	}
 	//Part8
 	public static int methodEight(int num1, int num2) {
-		int maxNum = 0;
-		if(num1 > num2) {
-			maxNum = num1;
-		}
-		else if(num1 < num2) {
-			maxNum = num2;
-		}
-		else {
-			System.out.println("You made both numbers exactly the same didn't you?....... La Sigh");
-		}
+		int maxNum;
+		maxNum = Math.max(num1, num2);
 		return maxNum;
 	}
 	//Part9
 	public static int methodNine(int num1, int num2) {
-		int minNum = 0;
-		if(num1 < num2) {
-			minNum = num1;
-		}
-		else if(num1 > num2) {
-			minNum = num2;
-		}
-		else {
-			System.out.println("You made both numbers exactly the same didn't you?....... La Sigh");
-		}
+		int minNum;
+		minNum = Math.min(num1, num2);
 		return minNum;
 	}
 	//Part10
@@ -208,36 +184,14 @@ public class UseTheMethods {
 	}
 	//Part11
 	public static int methodEleven(int num1, int num2, int num3) {
-		int maxNum = 0;
-		if(num1 > num2 && num1 > num3) {
-			maxNum = num1;
-		}
-		else if(num1 < num2 && num3 < num2) {
-			maxNum = num2;
-		}
-		else if (num3 > num1 && num3 > num2) {
-			maxNum = num3;
-		}
-		else {
-			System.out.println("You made all three numbers exactly the same didn't you?....... La Sigh");
-		}
+		int maxNum;
+		maxNum = Math.max(num1, Math.max(num2, num3));
 		return maxNum;
 	}
 	//Part12
 	public static int methodTweleve(int num1, int num2, int num3) {
-		int minNum = 0;
-		if(num1 < num2 && num1 < num3) {
-			minNum = num1;
-		}
-		else if(num1 > num2 && num3 > num2) {
-			minNum = num2;
-		}
-		else if (num3 < num1 && num3 < num2) {
-			minNum = num3;
-		}
-		else {
-			System.out.println("You made all three numbers exactly the same didn't you?....... La Sigh");
-		}
+		int minNum;
+		minNum = Math.min(num1, Math.min(num2, num3));
 		return minNum;
 	}
 }
