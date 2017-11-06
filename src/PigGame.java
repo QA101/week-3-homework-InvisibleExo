@@ -37,23 +37,19 @@ public class PigGame {
 			int scorePerRound = 0;
 			int dice = 0;
 			int turnRotate;
-			
-			
-			
+		
 			while (playing == true) {
-				
-				
-			
+				//Active gameplay loop.
 				OUTER:
 				for (turnRotate = 1; turnRotate <= playerSize; turnRotate+=0  ) {
 					System.out.println("\tPlayer" + turnRotate + "'s turn.");
 					System.out.println("What is your next move?");
 					decision = action.nextLine();
-					// For the score to resume from their current total each round.
+					// For the score to resume from their current total each round and after each roll.
 					if (scorePerRound == 0) {
 						scorePerRound = score.get(turnRotate-1);
 					}
-					switch (decision) {
+					switch (decision.trim()) {
 						case "ROLL": case "Roll": case "roll": 
 								dice = diceRoll(dice);
 								System.out.println("\tDice is " + dice);
@@ -96,7 +92,7 @@ public class PigGame {
 							System.out.println("You did not enter a valid command. Please try again.");
 							break;
 					
-					}
+					} 
 				
 			} 
 			if (winner == true) {
@@ -106,7 +102,7 @@ public class PigGame {
 				System.out.println("Now you have a choice. Do you want to play again: ");
 				
 				decision = action.nextLine();
-					switch (decision) {
+					switch (decision.trim()) {
 					case "yes": case "Yes": case "YES":
 						score.clear();
 						System.out.println("How many players do you want this time?");
@@ -148,11 +144,8 @@ public class PigGame {
 
 	// Rolling Dice
 	public static int diceRoll(int dice) {
-		dice = 0;
 		Random generator = new Random();
-		do {
-			dice = generator.nextInt(6) + 1;
-		} while (dice == 0);
+		dice = generator.nextInt(6) + 1;
 		return dice;
 	}
 
